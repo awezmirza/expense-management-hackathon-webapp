@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+    <h1>Personal Finance Manager</h1>
+    <ul class="header">
+        <li>Your Budget: 
+            <span id="total_budget"> 0 </span> 
+            <button onclick="addBgt()" class="bgt_btn"id="edit_total_budget">Edit Total Budget</button>
+        </li>
+        <li>Total Expense: 
+            <span id="total_expense">700</span>
+        </li>
+        <li>Leftout Budget: 
+            <span id="left_budget">300</span>
+        </li>
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    </ul>
+
+    <div class="container">
+        <h1 class="text_col">Expense Tracker</h1>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required />
+            <input type="number" id="expense-amount" placeholder="Amount" required />
+            <button type="submit">
+                Add Expense
+            </button>
+        </form>
+        <div class="expense-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Expense Name</th>
+                        <th>Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <h3 class="dispHdn sgstn" id="sugstn">Suggestions: You have spent more than 50% of your budget. Please spend
+        <wisely!></wisely!>
+    </h3>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
